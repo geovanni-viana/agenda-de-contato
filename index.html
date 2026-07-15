@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Agenda de Contatos</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="page">
+    <main class="card">
+      <header class="header">
+        <h1>Agenda de Contatos</h1>
+        <p class="subtitle">Seus contatos, salvos neste dispositivo.</p>
+      </header>
+
+      <form id="contact-form" class="form" novalidate>
+        <input type="hidden" id="contact-id" />
+
+        <div class="field">
+          <label for="name-input">Nome</label>
+          <input id="name-input" type="text" placeholder="Nome completo" maxlength="100" autocomplete="off" />
+        </div>
+
+        <div class="field-row">
+          <div class="field">
+            <label for="phone-input">Telefone</label>
+            <input id="phone-input" type="tel" placeholder="(00) 00000-0000" maxlength="20" autocomplete="off" />
+          </div>
+          <div class="field">
+            <label for="email-input">E-mail</label>
+            <input id="email-input" type="email" placeholder="nome@email.com" maxlength="120" autocomplete="off" />
+          </div>
+        </div>
+
+        <p id="form-error" class="form-error" role="alert"></p>
+
+        <div class="form-actions">
+          <button type="submit" id="submit-btn" class="btn btn--primary">Adicionar contato</button>
+          <button type="button" id="cancel-edit-btn" class="btn btn--ghost" hidden>Cancelar</button>
+        </div>
+      </form>
+
+      <div class="toolbar">
+        <label for="search-input" class="visually-hidden">Pesquisar contatos</label>
+        <input id="search-input" class="search-input" type="search" placeholder="Pesquisar por nome, telefone ou e-mail…" autocomplete="off" />
+        <span id="contact-count" class="contact-count">0 contatos</span>
+      </div>
+
+      <ul id="contact-list" class="contact-list" aria-label="Lista de contatos"></ul>
+      <p id="empty-state" class="empty-state" hidden></p>
+    </main>
+  </div>
+
+  <p id="toast" class="toast" role="status" aria-live="polite"></p>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
